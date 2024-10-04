@@ -6,15 +6,20 @@ import 'data/names_data.dart';
 class Names {
   final Shuffler shuffle;
 
-  const Names(this.shuffle);
+  final String _familyName;
+  final String _lastName;
+
+  Names(this.shuffle)
+      : _familyName = shuffle.element(familyNameList),
+        _lastName = shuffle.element(lastNamesList);
 
   String fullName({String separatorString = ''}) {
     return Combiner(insertString: separatorString).combineAndInsert(
-      [shuffle.element(familyNameList), shuffle.element(lastNamesList)],
+      [_familyName, _lastName],
     );
   }
 
-  String get lastName => shuffle.element(lastNamesList);
+  String get lastName => _lastName;
 
-  String get familyName => shuffle.element(familyNameList);
+  String get familyName => _familyName;
 }
