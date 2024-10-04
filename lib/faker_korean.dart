@@ -10,5 +10,6 @@ export 'src/bank.dart';
 export 'src/phone.dart';
 export 'src/lipsum.dart';
 export 'src/internet.dart';
+export 'src/images.dart';
 
 export 'src/model/bank_model.dart';

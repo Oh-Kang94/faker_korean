@@ -17,6 +17,8 @@ class FakerK {
 
   late final Internet internet;
 
+  late final Images images;
+
   // FakerK의 생성자에서 Shuffler를 초기화하고 Names를 초기화함
   FakerK({int? seed}) : _shuffler = Shuffler(seedNumber: seed) {
     names = Names(_shuffler);
@@ -25,5 +27,6 @@ class FakerK {
     phone = Phone(_shuffler);
     lipsum = Lipsum(_shuffler);
     internet = Internet(_shuffler);
+    images = Images();
   }
 }
