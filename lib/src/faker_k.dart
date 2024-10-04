@@ -1,6 +1,5 @@
-import 'package:faker_korean/src/address.dart';
-import 'package:faker_korean/src/names.dart';
-import 'package:faker_korean/src/shuffler.dart';
+import 'package:faker_korean/faker_korean.dart';
+import 'package:faker_korean/src/email.dart';
 
 class FakerK {
   final Shuffler _shuffler;
@@ -10,9 +9,21 @@ class FakerK {
 
   late final Address address;
 
+  late final Bank bank;
+
+  late final Phone phone;
+
+  late final Lipsum lipsum;
+
+  late final Email email;
+
   // FakerK의 생성자에서 Shuffler를 초기화하고 Names를 초기화함
   FakerK({int? seed}) : _shuffler = Shuffler(seedNumber: seed) {
-    names = Names(_shuffler); // FakerK.names에 접근할 수 있도록 Names를 초기화
+    names = Names(_shuffler);
     address = Address(_shuffler);
+    bank = Bank(_shuffler);
+    phone = Phone(_shuffler);
+    lipsum = Lipsum(_shuffler);
+    email = Email(_shuffler);
   }
 }

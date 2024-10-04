@@ -1,9 +1,13 @@
 library faker_korean;
 
-export 'src/data/names_data.dart';
-
 export 'src/faker_k.dart';
 
 export 'src/shuffler.dart';
 
 export 'src/names.dart';
+export 'src/address.dart';
+export 'src/bank.dart';
+export 'src/phone.dart';
+export 'src/lipsum.dart';
+
+export 'src/model/bank_model.dart';
