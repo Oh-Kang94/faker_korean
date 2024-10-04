@@ -8,7 +8,7 @@ class Internet {
   const Internet(this._shuffler);
 
   String get id => _shuffler.generateWithRegex(
-        pattern: RegExp(r'^[a-zA-Z0-9._%+-]{4,12}$'),
+        pattern: RegExp(r'^[a-zA-Z0-9._%+-]$'),
       );
 
   String get email => const Combiner(insertString: '@')
@@ -21,7 +21,7 @@ class Internet {
         min: 8,
         max: 16,
         pattern: RegExp(
-          r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$',
+          r'^[A-Za-z\d@$!%*?&]$',
         ),
       );
 
