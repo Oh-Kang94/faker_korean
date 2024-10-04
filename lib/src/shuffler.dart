@@ -70,11 +70,15 @@ class Shuffler {
       max == min ? max : _random.nextInt(max - min) + min;
 
   double makeDouble(int maxDigits, {int minDigits = 1}) {
-    double maxValue = pow(10, maxDigits - 1).toDouble();
-    double minValue = pow(10, minDigits - 2).toDouble();
+    double maxValue = pow(10, maxDigits).toDouble();
+    double minValue = pow(10, minDigits - 1).toDouble();
 
     return (_random.nextDouble() * (maxValue - minValue) + minValue)
         .floorToDouble();
+  }
+
+  int integerCompareDigits(int maxDigits, {int minDigits = 1}) {
+    return makeDouble(maxDigits, minDigits: minDigits).floor();
   }
 
   /// Generates a random boolean value.

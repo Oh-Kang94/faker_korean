@@ -31,7 +31,7 @@ class Images {
           height: height,
           width: width,
           random: index,
-          seed: seed,
+          seed: "$seed$index",
           imageFormat: imageFormat,
         ),
       );
@@ -68,7 +68,7 @@ class Images {
             height: height,
             random: index,
             imageFormat: imageFormat,
-            seed: seed,
+            seed: '$seed$index',
           ),
         ),
       );

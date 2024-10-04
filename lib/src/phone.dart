@@ -8,10 +8,10 @@ class Phone {
   const Phone(this.shuffle);
 
   String telNumber({String separator = '-'}) =>
-      "${shuffle.element(areaCode)}${shuffle.makeDouble(4, minDigits: 3)}${shuffle.makeDouble(4, minDigits: 4)}"
+      "${shuffle.element(areaCode)}${shuffle.integerCompareDigits(4, minDigits: 3)}${shuffle.integerCompareDigits(4, minDigits: 4)}"
           .formatPhoneNumber(separator: separator);
 
   String phoneNumber({String separator = '-'}) =>
-      "010${shuffle.makeDouble(4, minDigits: 4)}${shuffle.makeDouble(4, minDigits: 4)}"
+      "010${shuffle.integerCompareDigits(4, minDigits: 4)}${shuffle.integerCompareDigits(4, minDigits: 4)}"
           .formatPhoneNumber(separator: separator);
 }

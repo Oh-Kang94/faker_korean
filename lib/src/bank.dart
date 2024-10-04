@@ -13,9 +13,8 @@ class Bank {
 
   String account({int? digits}) {
     return shuffle
-        .makeDouble(digits ?? 14, minDigits: digits ?? 10)
-        .toString()
-        .split(".")[0];
+        .integerCompareDigits(digits ?? 14, minDigits: digits ?? 10)
+        .toString();
   }
 
   String get bankName => shuffle.element(bankNameMap.values.toList());
