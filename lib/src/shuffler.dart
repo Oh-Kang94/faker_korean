@@ -69,14 +69,13 @@ class Shuffler {
   int integer(int max, {int min = 0}) =>
       max == min ? max : _random.nextInt(max - min) + min;
 
-  /// Generates a random numeric string with the specified [length].
-  ///
-  /// Example:
-  /// ```dart
-  /// var shuffler = Shuffler();
-  /// print(shuffler.numberOfLength(6)); // Outputs a random 6-digit number as a string
-  /// ```
-  String numberOfLength(int length) => numbers(10, length).join();
+  double makeDouble(int maxDigits, {int minDigits = 1}) {
+    double maxValue = pow(10, maxDigits - 1).toDouble();
+    double minValue = pow(10, minDigits - 2).toDouble();
+
+    return (_random.nextDouble() * (maxValue - minValue) + minValue)
+        .floorToDouble();
+  }
 
   /// Generates a random boolean value.
   ///
@@ -87,26 +86,20 @@ class Shuffler {
   /// ```
   bool boolean() => _random.nextBool();
 
-  /// Generates a random double between [min] and [scale].
-  ///
-  /// Example:
-  /// ```dart
-  /// var shuffler = Shuffler();
-  /// print(shuffler.decimal(scale: 5)); // Outputs a random decimal between 0 and 5
-  /// ```
-  double decimal({num scale = 1, num min = 0}) =>
-      _random.nextDouble() * scale + min;
-
   /// Generates a random string of a length between [min] and [max].
   ///
   /// Example:
   /// ```dart
   /// var shuffler = Shuffler();
-  /// print(shuffler.string(10)); // Outputs a random string with a length between 1 and 10
+  /// print(shuffler.stringKorean(10)); // Outputs a random string with a length between 1 and 10
   /// ```
-  String string(int max, {int min = 1}) => String.fromCharCodes(
-        numbers(92, integer(max, min: min)).map((value) => value + 33),
-      );
+  String stringKorean({int len = 10}) {
+    const String chars =
+        "가각간갇갈감갑갚갛나날남납낱내낸녀녁노놀놈놉놋누눈눌늙니다달담답당대댁더도독돈돌돕동둘듭디라락란랏래랭로락리마막만맛매맥모목몽무문물미민바박반받밧배백보복본봉부북비사삭산샤서석선설섣세섹소솔숨쉰수숙술순슬시식신아악안앉애액야약양얏여역연열영예오옥온옷왕왜외위유육율응이익인일임입잇자작잔잡장재저전절점제조종주준줄줏지직차착찬찾처척천체치키타탁탈탓탱파편평포풀피하학한해햇혼휘힝";
+
+    return List.generate(len, (index) => chars[_random.nextInt(chars.length)])
+        .join();
+  }
 
   /// Generates a list of random elements based on the provided [generator] function, with a size between [min] and [max].
   ///
