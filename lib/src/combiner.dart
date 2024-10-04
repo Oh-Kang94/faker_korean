@@ -1,11 +1,11 @@
-class Splitter {
+class Combiner {
   final String _insertString;
 
-  const Splitter({
+  const Combiner({
     String? insertString,
   }) : _insertString = insertString ?? ' ';
 
-  String splitAndInsert(List<String> stringList) {
+  String combineAndInsert(List<String> stringList) {
     String result = '';
 
     for (int i = 0; i < stringList.length; i++) {

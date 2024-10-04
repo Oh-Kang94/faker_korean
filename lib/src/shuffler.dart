@@ -101,17 +101,21 @@ class Shuffler {
         .join();
   }
 
-  /// Generates a list of random elements based on the provided [generator] function, with a size between [min] and [max].
-  ///
-  /// Example:
-  /// ```dart
-  /// var shuffler = Shuffler();
-  /// var generated = shuffler.amount((i) => i * 2, 5);
-  /// print(generated); // Outputs a list with a random number of elements, e.g., [0, 2, 4]
-  /// ```
-  List<T> amount<T>(T Function(int i) generator, int max, {int min = 1}) {
-    var length = integer(max, min: min);
-    return List.generate(length, generator);
+  String generateWithRegex({
+    int max = 12,
+    int min = 4,
+    required RegExp pattern,
+  }) {
+    final Random random = Random();
+    final int length = integer(max, min: 4);
+
+    return List.generate(length, (_) {
+      String generatedChar;
+      do {
+        generatedChar = String.fromCharCode(33 + random.nextInt(94));
+      } while (!pattern.hasMatch(generatedChar));
+      return generatedChar;
+    }).join('');
   }
 
   /// Replaces `#` characters in the given [pattern] list with random digits.
@@ -135,21 +139,5 @@ class Shuffler {
         '#',
         onMatch: (_) =>
             numbers(16, 1).map((number) => number.toRadixString(16)).join(),
-      );
-
-  /// Generates a random string of [length] from the given [charSet].
-  ///
-  /// Example:
-  /// ```dart
-  /// var shuffler = Shuffler();
-  /// print(shuffler.fromCharSet('abc123', 5)); // Outputs a random string from the charset
-  /// ```
-  String fromCharSet(String charSet, int length) => String.fromCharCodes(
-        Iterable.generate(
-          length,
-          (_) => charSet.codeUnitAt(
-            _random.nextInt(charSet.length),
-          ),
-        ),
       );
 }

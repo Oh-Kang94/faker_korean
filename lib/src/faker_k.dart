@@ -1,5 +1,5 @@
 import 'package:faker_korean/faker_korean.dart';
-import 'package:faker_korean/src/email.dart';
+import 'package:faker_korean/src/internet.dart';
 
 class FakerK {
   final Shuffler _shuffler;
@@ -15,7 +15,7 @@ class FakerK {
 
   late final Lipsum lipsum;
 
-  late final Email email;
+  late final Internet internet;
 
   // FakerK의 생성자에서 Shuffler를 초기화하고 Names를 초기화함
   FakerK({int? seed}) : _shuffler = Shuffler(seedNumber: seed) {
@@ -24,6 +24,6 @@ class FakerK {
     bank = Bank(_shuffler);
     phone = Phone(_shuffler);
     lipsum = Lipsum(_shuffler);
-    email = Email(_shuffler);
+    internet = Internet(_shuffler);
   }
 }

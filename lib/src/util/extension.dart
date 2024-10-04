@@ -1,4 +1,4 @@
-import 'package:faker_korean/src/splitter.dart';
+import 'package:faker_korean/src/combiner.dart';
 
 extension PhoneNumberFormatting on String {
 
@@ -88,6 +88,6 @@ String _formatPhoneNumber(
   String part3,
   String separator,
 ) {
-  return Splitter(insertString: separator)
-      .splitAndInsert([part1, part2, part3]);
+  return Combiner(insertString: separator)
+      .combineAndInsert([part1, part2, part3]);
 }

@@ -1,5 +1,5 @@
 import 'package:faker_korean/src/shuffler.dart';
-import 'package:faker_korean/src/splitter.dart';
+import 'package:faker_korean/src/combiner.dart';
 
 import 'data/address_data.dart';
 
@@ -15,7 +15,7 @@ class Address {
 
   String get sidoguAddress => shuffle.element(sidoguMap.values.toList());
 
-  String get roadAddress => const Splitter().splitAndInsert(
+  String get roadAddress => const Combiner().combineAndInsert(
         [
           shuffle.element(roadList),
           shuffle.integer(1000).toString(),
