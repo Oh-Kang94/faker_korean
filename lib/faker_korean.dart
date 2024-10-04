@@ -9,5 +9,6 @@ export 'src/address.dart';
 export 'src/bank.dart';
 export 'src/phone.dart';
 export 'src/lipsum.dart';
+export 'src/internet.dart';
 
 export 'src/model/bank_model.dart';
