@@ -9,7 +9,7 @@ class Address {
   const Address(this.shuffle);
 
   String get fullAddress =>
-      "$siAddress $sidoguAddress $roadAddress, $detailAddress";
+      "($postalCode) $siAddress $sidoguAddress $roadAddress, $detailAddress";
 
   String get siAddress => shuffle.element(sidoMap.values.toList());
 
@@ -24,4 +24,6 @@ class Address {
 
   String get detailAddress =>
       "${shuffle.integer(1100)}동 ${shuffle.integer(10000)}호";
+
+  String get postalCode => "${shuffle.integerCompareDigits(5, minDigits: 5)}";
 }
