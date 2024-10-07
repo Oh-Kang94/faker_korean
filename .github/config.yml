@@ -1,0 +1,10 @@
+version: 1
+update-on: push
+
+templates:
+  - title: "[Bug] Issue Bug"
+    filename: -bug--Issue-Bug.md
+    about: Create a report to find a bug for us
+  - title: "[Feature] Request Feature"
+    filename: -feature--Request-feature.md
+    about: Suggest an idea for this project
