@@ -20,17 +20,13 @@ class Bank {
   String get bankName => shuffle.element(bankNameMap.values.toList());
 
   Future<ImageProvider> bankImage({double size = 24}) async {
-    String svgString = shuffle.element(bankImageMap.values.toList());
+    String svgString = shuffle.mapElementValue(bankImageMap);
     Uint8List svg = await _svgStringToPngBytes(svgString, size, size);
     return MemoryImage(svg);
   }
 
   Future<BankModel> bankAll({double size = 24}) async {
-    // bankNameMap과 bankImageMap에서 키 리스트를 가져옴
-    List<String> bankCodes = bankNameMap.keys.toList();
-
-    // 무작위로 은행 코드 선택
-    String randomBankCode = shuffle.element(bankCodes);
+    String randomBankCode = shuffle.mapElementKey(bankNameMap);
 
     // 선택한 은행 코드에 맞는 이름과 이미지 가져오기
     String bankName = bankNameMap[randomBankCode]!;
