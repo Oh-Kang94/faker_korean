@@ -3,6 +3,7 @@ import 'src/address_test.dart' as address_test;
 import 'src/bank_test.dart' as bank_test;
 import 'src/image_test.dart' as image_test;
 import 'src/internet_test.dart' as internet_test;
+import 'src/lipsum_test.dart' as lipsum_test;
 
 void main() {
   faker_test.main();
@@ -10,4 +11,5 @@ void main() {
   bank_test.main();
   image_test.main();
   internet_test.main();
+  lipsum_test.main();
 }
