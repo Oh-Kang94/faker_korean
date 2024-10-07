@@ -1,6 +1,5 @@
 import 'package:faker_korean/faker_korean.dart';
 import 'package:faker_korean/src/data/email_data.dart';
-import 'package:faker_korean/src/combiner.dart';
 
 class Internet {
   final Shuffler _shuffler;

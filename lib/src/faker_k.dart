@@ -1,5 +1,4 @@
 import 'package:faker_korean/faker_korean.dart';
-import 'package:faker_korean/src/internet.dart';
 
 class FakerK {
   final Shuffler _shuffler;
