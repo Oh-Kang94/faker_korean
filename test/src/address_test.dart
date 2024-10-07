@@ -55,7 +55,7 @@ void main() {
       }
     });
 
-    test('Full Address', () {
+    test('Full Address Test', () {
       final FakerK faker = FakerK(seed: 123);
       final String fullAddress = faker.address.fullAddress;
 
