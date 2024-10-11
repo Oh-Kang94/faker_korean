@@ -1,6 +1,6 @@
 name: faker_korean
-description: "A new Flutter package project."
-version: 0.0.1
+description: "Faker Korean is generating fake data for test, or dummy data for Korean."
+version: 0.1.0
 homepage: https://github.com/Oh-Kang94/faker_korean
 
 environment:
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_svg: any
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
