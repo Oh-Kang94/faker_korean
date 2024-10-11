@@ -13,7 +13,6 @@ For additional comments and bug reports, please use the Issue tab.
 
 ## What is Faker_Korean (Ko)
 
-<Ko>
 Faker Korean은 다른 Faker부류의 더미 데이터 생성기와 같은 역할을 합니다.
 
 하지만, 개인적인 고충으로 한국어와 정책에 맞는 더미데이터를 생성하기 힘들다는 판단하에 만든 한국어 전용 더미데이터 입니다.
@@ -21,9 +20,6 @@ Faker Korean은 다른 Faker부류의 더미 데이터 생성기와 같은 역�
 주소, 이름, 전화번호, 은행, Lorem Ipsum같이 힌국어가 아닌 데이터들을 현지화 시켜보려고 노력했습니다.
 
 추가적인 의견 및 버그 제보는 Issue 탭을 이용해주시면 감사하겠습니다.
-<Ko/>
-
----
 
 ## Simple Usage
 
